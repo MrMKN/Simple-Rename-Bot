@@ -9,7 +9,7 @@
     "API_HASH": {"description": "Get this value from https://my.telegram.org", "required": true},                              
     "BOT_TOKEN": {"description": "Your bot token. Get this value from https://t.me/BotFather", "required": true},
     "ADMIN": {"description": "your telegram id. because this bot repo is admin only", "required": true},
-    "CAPTION": {"description": "your permanent caption.\n\nKeyword's 👇👇\n\n{file_name} = file name add in caption \n\n{file_size} = file size add in caption", "required": false},
+    "CAPTION": {"description": "your permanent caption. Keyword's 👉 {file_name} = file name add in caption {file_size} = file size add in caption", "value": "{file_name}\n\n💽 Size = {file_size}\n\n📯Join My Channel : @mkn_bots_updates", "required": false},                       
     "THUMBNAIL": {"description": "skip this 😁. this value get from after deploying to send /set in your bot", "required": false}
   }, 
   "addons": [ ],
