@@ -14,4 +14,7 @@ class Bot(Client):
         )
 
 bot = Bot()
+
+print('bot is started......⚡️⚡️')
+
 bot.run()
