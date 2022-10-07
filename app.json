@@ -1,0 +1,33 @@
+{
+  "name": "Simple-Rename-Bot",
+  "description": "Simple & High Speed Telegram File Rename Bot For only personal use",                  
+  "keywords": ["telegram", "Rename-bot", "pyrogram"],
+  "logo": "https://graph.org/file/b7e8484f6395a180b6380.jpg",
+  "repository": "https://github.com/MrMKN/Simple-Rename-Bot",
+  "env": {
+    "API_ID": {"description": "Get this value from https://my.telegram.org", "required": true},
+    "API_HASH": {"description": "Get this value from https://my.telegram.org", "required": true},                              
+    "BOT_TOKEN": {"description": "Your bot token. Get this value from https://t.me/BotFather", "required": true},
+    "ADMIN": {"description": "your telegram id. because this bot repo is admin only", "required": true},
+    "CAPTION": {"description": "your permanent caption.\nKeyword's 👇👇\n{file_name} = file name add in caption \n{file_size} = file size add in caption", "required": false},
+    "THUMBNAIL": {"description": "skip this 😁. this value get from after deploying to send /set in your bot", "required": false},
+  }, 
+  "addons": [],
+  "stack": "container",
+  "buildpacks": [{"url": "heroku/python"}],
+  "formation": {"worker": {"quantity": 1, "size": "free"}}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
