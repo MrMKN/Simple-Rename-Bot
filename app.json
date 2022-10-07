@@ -10,7 +10,7 @@
     "BOT_TOKEN": {"description": "Your bot token. Get this value from https://t.me/BotFather", "required": true},
     "ADMIN": {"description": "your telegram id. because this bot repo is admin only", "required": true},
     "CAPTION": {"description": "your permanent caption.\nKeyword's 👇👇\n{file_name} = file name add in caption \n{file_size} = file size add in caption", "required": false},
-    "THUMBNAIL": {"description": "skip this 😁. this value get from after deploying to send /set in your bot", "required": false},
+    "THUMBNAIL": {"description": "skip this 😁. this value get from after deploying to send /set in your bot", "required": false}
   }, 
   "addons": [],
   "stack": "container",
