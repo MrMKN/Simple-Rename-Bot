@@ -2,6 +2,11 @@
 
 📝 Simple & High Speed Telegram File Rename Bot For only personal use 
 
+
+## How To Deploy
+
+<a href="https://youtu.be/oc847WvOUaI"><img src="https://img.shields.io/badge/How%20To%20Deploy-blue.svg?logo=Youtube"></a> <img src="https://img.shields.io/youtube/views/oc847WvOUaI?style=social">                           
+
 ## Deploy To Heroku
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/MrMKN/Simple-Rename-Bot)
