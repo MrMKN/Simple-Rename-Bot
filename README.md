@@ -5,7 +5,7 @@
 
 ## How To Deploy
 
-<a href="https://youtu.be/oc847WvOUaI"><img src="https://img.shields.io/badge/How%20To%20Deploy-blue.svg?logo=Youtube"></a> <img src="https://img.shields.io/youtube/views/oc847WvOUaI?style=social">                           
+<a href="https://youtu.be/oc847WvOUaI"><img src="https://img.shields.io/badge/How%20To%20Deploy-red.svg?logo=Youtube"></a>                     
 
 ## Deploy To Heroku
 
