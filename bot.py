@@ -12,9 +12,15 @@ class Bot(Client):
             plugins={"root": "main"},
             sleep_threshold=5,
         )
+    async def start(self):
+       await super().start()
+       me = await self.get_me()       
+       print(f"{me.first_name} | @{me.username} 𝚂𝚃𝙰𝚁𝚃𝙴𝙳...⚡️")
+       
+    async def stop(self, *args):
+      await super().stop()      
+      print("Bot Restarting........")
+
 
 bot = Bot()
-
-print('bot is started......⚡️⚡️')
-
 bot.run()
