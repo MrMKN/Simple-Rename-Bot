@@ -13,7 +13,6 @@
     "THUMBNAIL": {"description": "skip this 😁. this value get from after deploying to send /set in your bot", "required": false}
   }, 
   "addons": [ ],
-  "stack": "container",
   "buildpacks": [{"url": "heroku/python"}],
   "formation": {"worker": {"quantity": 1, "size": "free"} }
 }
