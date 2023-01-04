@@ -9,6 +9,13 @@
 
 ## Deployment Support
 
+
+## Deploy to Koyeb
+
+⚠️ personal use & 1 process at a time 
+
+[![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?type=git&repository=github.com/MrMKN/Simple-Rename-Bot&env[BOT_TOKEN]&env[API_ID]&env[API_HASH]&env[ADMIN]&env[CAPTION]&env[THUMBNAIL]&run_command=python%20bot.py&branch=main&name=renamer)              
+
 ### Heroku
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/MrMKN/Simple-Rename-Bot)
