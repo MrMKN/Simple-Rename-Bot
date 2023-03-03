@@ -24,7 +24,7 @@
 ```
 start - get start the bot
 rename - replay with file to rename
-set - replay wuth photo to set thumbnail
+del - to delete your thumbnail 
 view - view current thumbnail 
 ```
 
