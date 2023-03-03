@@ -25,9 +25,10 @@ async def rename_file(bot, msg):
     else:
         cap = f"{new_name}\n\n💽 size : {filesize}"
       
-    thumb_pic = f"{DOWNLOAD_LOCATION}/thumbnail.jpg" 
-    og_thumbnail = thumb_pic if thumb_pic else await bot.download_media(og_media.thumbs[0].file_id)
-
+    if f"{DOWNLOAD_LOCATION}/thumbnail.jpg":
+        og_thumbnail = f"{DOWNLOAD_LOCATION}/thumbnail.jpg"
+    else:
+        og_thumbnail = await bot.download_media(og_media.thumbs[0].file_id)
     await sts.edit("Trying to Uploading")
     c_time = time.time()
     try:
@@ -35,7 +36,9 @@ async def rename_file(bot, msg):
     except Exception as e:  
         return await sts.edit(f"Error {e}")                       
     try:
-        if not thumb_pic:
+        if f"{DOWNLOAD_LOCATION}/thumbnail.jpg":
+            print(f"DOWNLOAD_LOCATION")
+        else:
             os.remove(og_thumbnail)
         os.remove(downloaded)      
     except:
