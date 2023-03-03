@@ -12,8 +12,7 @@ async def start_cmd(bot, msg):
         InlineKeyboardButton("🖥️ How To Deploy", url="https://youtu.be/oc847WvOUaI")
     ]])
     if msg.from_user.id != ADMIN:
-        await msg.reply_text(text=txt, reply_markup=btn, disable_web_page_preview = True)
-        return
+        return await msg.reply_text(text=txt, reply_markup=btn, disable_web_page_preview = True)
     await start(bot, msg, cb=False)
 
 
@@ -34,7 +33,11 @@ async def start(bot, msg, cb=True):
 
 @Client.on_callback_query(filters.regex("help"))
 async def help(bot, msg):
-    txt=f"just send a file and /rename <new name> with replayed your file\n\nReply a photo and send /set to set temporary thumbnail\n/view to see your thumbnail"
+    txt = "just send a file and /rename <new name> with replayed your file\n\n"
+    txt += "Reply a photo and send /set to set temporary thumbnail \n"
+    txt += "send photo to set thumbnail automatic \n"
+    txt += "/view to see your thumbnail \n"
+    txt += "/del to delete your thumbnail"
     button= [[        
         InlineKeyboardButton("🚫 Close", callback_data="del"),
         InlineKeyboardButton("⬅️ Back", callback_data="start") 
