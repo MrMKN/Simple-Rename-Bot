@@ -1,7 +1,6 @@
-import time
-import os
+import time, os
 from pyrogram import Client, filters, enums
-from config import temp, CAPTION, ADMIN
+from config import DOWNLOAD_LOCATION, CAPTION, ADMIN
 from main.utils import progress_message, humanbytes
 
 @Client.on_message(filters.private & filters.command("rename") & filters.user(ADMIN))             
@@ -22,25 +21,28 @@ async def rename_file(bot, msg):
         try:
             cap = CAPTION.format(file_name=new_name, file_size=filesize)
         except Exception as e:            
-            await sts.edit(text=f"Your caption Error unexpected keyword ●> ({e})")
-            return
+            return await sts.edit(text=f"Your caption Error unexpected keyword ●> ({e})")           
     else:
         cap = f"{new_name}\n\n💽 size : {filesize}"
-    raw_thumbnail = temp.THUMBNAIL 
-    if raw_thumbnail:
-        og_thumbnail = await bot.download_media(raw_thumbnail)
-    else:
-        og_thumbnail = await bot.download_media(og_media.thumbs[0].file_id)
+      
+    thumb_pic = f"{DOWNLOAD_LOCATION}/thumbnail.jpg" 
+    og_thumbnail = thumb_pic if thumb_pic else await bot.download_media(og_media.thumbs[0].file_id)
+
     await sts.edit("Trying to Uploading")
     c_time = time.time()
     try:
         await bot.send_document(msg.chat.id, document=downloaded, thumb=og_thumbnail, caption=cap, progress=progress_message, progress_args=("Uploade Started.....", sts, c_time))        
     except Exception as e:  
-        await sts.edit(f"Error {e}") 
-        return               
+        return await sts.edit(f"Error {e}")                       
     try:
-        os.remove(downloaded)
-        os.remove(og_thumbnail)
+        if not thumb_pic:
+            os.remove(og_thumbnail)
+        os.remove(downloaded)      
     except:
         pass
     await sts.delete()
+
+
+
+
+
