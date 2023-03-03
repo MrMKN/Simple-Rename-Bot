@@ -34,7 +34,6 @@ async def start(bot, msg, cb=True):
 @Client.on_callback_query(filters.regex("help"))
 async def help(bot, msg):
     txt = "just send a file and /rename <new name> with replayed your file\n\n"
-    txt += "Reply a photo and send /set to set temporary thumbnail \n"
     txt += "send photo to set thumbnail automatic \n"
     txt += "/view to see your thumbnail \n"
     txt += "/del to delete your thumbnail"
