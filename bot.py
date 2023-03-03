@@ -1,7 +1,11 @@
 from pyrogram import Client
 from config import *
+import os
 
 class Bot(Client):
+    if not os.path.isdir(DOWNLOAD_LOCATION):
+        os.makedirs(DOWNLOAD_LOCATION)
+
     def __init__(self):
         super().__init__(
             name="simple-renamer",
