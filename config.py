@@ -9,5 +9,3 @@ CAPTION = environ.get("CAPTION", "")
 # for thumbnail ( back end is MrMKN brain 😉)
 DOWNLOAD_LOCATION = "./DOWNLOADS"
 
-try: Thumbnail = f"{DOWNLOAD_LOCATION}/thumbnail.jpg"
-except FileNotFoundError: Thumbnail = None
