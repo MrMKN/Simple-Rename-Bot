@@ -7,11 +7,12 @@ dir = os.listdir(DOWNLOAD_LOCATION)
 @Client.on_message(filters.private & filters.photo & filters.user(ADMIN))                            
 async def set_tumb(bot, msg):       
     if len(dir) == 0:
-        await bot.download_media(message=msg.photo.file_id, file_name=f"{DOWNLOAD_LOCATION}/thumbnail.jpg") 
+        await bot.download_media(message=msg.photo.file_id, file_name=f"{DOWNLOAD_LOCATION}/thumbnail.jpg")
+        return await msg.reply(f"Your permanent thumbnail is saved in dictionary ✅️ \nif you change yur server or recreate the server app to again reset your thumbnail⚠️")            
     else:    
         os.remove(f"{DOWNLOAD_LOCATION}/thumbnail.jpg")
         await bot.download_media(message=msg.photo.file_id, file_name=f"{DOWNLOAD_LOCATION}/thumbnail.jpg")               
-    return await msg.reply(f"Your permanent thumbnail is saved in dictionary ✅️ \nif you change yur server or recreate the server app to again reset your thumbnail⚠️")            
+        return await msg.reply(f"Your permanent thumbnail is saved in dictionary ✅️ \nif you change yur server or recreate the server app to again reset your thumbnail⚠️")            
 
 
 @Client.on_message(filters.private & filters.command("view") & filters.user(ADMIN))                            
