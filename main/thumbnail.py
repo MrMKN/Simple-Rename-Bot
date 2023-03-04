@@ -17,14 +17,14 @@ async def set_tumb(bot, msg):
 
 @Client.on_message(filters.private & filters.command("view") & filters.user(ADMIN))                            
 async def view_tumb(bot, msg):
-    if len(dir) == 0:        
+    if len(dir) == > 0:        
         await msg.reply_text(text="you don't have any thumbnail")
     else:       
         await msg.reply_photo(photo=f"{DOWNLOAD_LOCATION}/thumbnail.jpg", caption="this is your current thumbnail")
 
 @Client.on_message(filters.private & filters.command(["del", "del_thumb"]) & filters.user(ADMIN))                            
 async def del_tumb(bot, msg):
-    if len(dir) == 0: 
+    if len(dir) == > 0: 
         await msg.reply_text(text="you don't have any thumbnail")
     else: 
         os.remove(f"{DOWNLOAD_LOCATION}/thumbnail.jpg")
