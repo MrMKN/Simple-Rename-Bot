@@ -2,7 +2,7 @@ from pyrogram import Client, filters
 from config import ADMIN, DOWNLOAD_LOCATION
 import os
 
-dir = os.listdir(DOWNLOAD_LOCATION)
+dir = os.listdir(f"{DOWNLOAD_LOCATION}/*")
 
 @Client.on_message(filters.private & filters.photo & filters.user(ADMIN))                            
 async def set_tumb(bot, msg):       
@@ -17,14 +17,14 @@ async def set_tumb(bot, msg):
 
 @Client.on_message(filters.private & filters.command("view") & filters.user(ADMIN))                            
 async def view_tumb(bot, msg):
-    if len(dir) == < 1:        
+    if len(dir) == 0:        
         await msg.reply_text(text="you don't have any thumbnail")
     else:       
         await msg.reply_photo(photo=f"{DOWNLOAD_LOCATION}/thumbnail.jpg", caption="this is your current thumbnail")
 
 @Client.on_message(filters.private & filters.command(["del", "del_thumb"]) & filters.user(ADMIN))                            
 async def del_tumb(bot, msg):
-    if len(dir) == < 1: 
+    if len(dir) == 0: 
         await msg.reply_text(text="you don't have any thumbnail")
     else: 
         os.remove(f"{DOWNLOAD_LOCATION}/thumbnail.jpg")
