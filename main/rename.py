@@ -1,6 +1,6 @@
 import time, os
 from pyrogram import Client, filters, enums
-from config import Thumbnail, CAPTION, ADMIN
+from config import DOWNLOAD_LOCATION, CAPTION, ADMIN
 from main.utils import progress_message, humanbytes
 
 @Client.on_message(filters.private & filters.command("rename") & filters.user(ADMIN))             
@@ -25,8 +25,13 @@ async def rename_file(bot, msg):
     else:
         cap = f"{new_name}\n\n💽 size : {filesize}"
 
-    # this idea's back end is MKN brain 🧠 
-    og_thumbnail = Thumbnail if Thumbnail is not None else await bot.download_media(og_media.thumbs[0].file_id)
+    # this idea's back end is MKN brain 🧠
+    dir = os.listdir(DOWNLOAD_LOCATION)
+    if len(dir) == 0:
+        og_thumbnail = await bot.download_media(og_media.thumbs[0].file_id)
+    else:
+        og_thumbnail = f"{DOWNLOAD_LOCATION}/thumbnail.jpg"
+
     await sts.edit("Trying to Uploading")
     c_time = time.time()
     try:
@@ -34,7 +39,7 @@ async def rename_file(bot, msg):
     except Exception as e:  
         return await sts.edit(f"Error {e}")                       
     try:
-        if Thumbnail is None:
+        if len(dir) == 0:
             os.remove(og_thumbnail)
         os.remove(downloaded)      
     except:
