@@ -27,12 +27,16 @@ async def rename_file(bot, msg):
 
     # this idea's back end is MKN brain 🧠
 
-    try:
-        og_thumbnail = f"{DOWNLOAD_LOCATION}/thumbnail.jpg"
-    except Exception as e:
-        print(e)
+    dir = os.listdir(DOWNLOAD_LOCATION)
+    if len(dir) == 0:
         file_thumb = await bot.download_media(og_media.thumbs[0].file_id)
         og_thumbnail = file_thumb
+    else:
+        try:
+            og_thumbnail = f"{DOWNLOAD_LOCATION}/thumbnail.jpg"
+        except Exception as e:
+            print(e)        
+            og_thumbnail = None
         
     await sts.edit("Trying to Uploading")
     c_time = time.time()
