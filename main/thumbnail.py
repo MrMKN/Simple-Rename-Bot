@@ -2,7 +2,7 @@ from pyrogram import Client, filters
 from config import ADMIN, DOWNLOAD_LOCATION
 import os
 
-dir = os.listdir(f"{DOWNLOAD_LOCATION}/*")
+dir = os.listdir(f"{DOWNLOAD_LOCATION}/" + *)
 
 @Client.on_message(filters.private & filters.photo & filters.user(ADMIN))                            
 async def set_tumb(bot, msg):       
