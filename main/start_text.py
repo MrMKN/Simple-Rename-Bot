@@ -18,9 +18,9 @@ async def start_cmd(bot, msg):
 
 @Client.on_callback_query(filters.regex("start"))
 async def start(bot, msg, cb=True):   
-    txt=f"hai {msg.from_user.mention} i am simple rename bot with personal usage.\nthis bot is made by <b><a href=https://github.com/MrMKN>MrMKN</a></b>"                                     
+    txt=f"hai {msg.from_user.mention} i am simple rename bot with personal usage.\nthis bot is made by <b><a href=https://t.me/Telugu_Bomma_VR_official>Telugu_Bomma_VR_official</a></b>"                                     
     button= [[
-        InlineKeyboardButton("🤖 Bot Updates", url="https://t.me/mkn_bots_updates")
+        InlineKeyboardButton("🤖 Bot Updates", url="https://t.me/Telugu_Bomma_VR_official")
         ],[
         InlineKeyboardButton("ℹ️ Help", callback_data="help"),
         InlineKeyboardButton("📡 About", callback_data="about") 
@@ -47,9 +47,9 @@ async def help(bot, msg):
 @Client.on_callback_query(filters.regex("about"))
 async def about(bot, msg):
     me=await bot.get_me()
-    Master=f"<a href=https://t.me/Mo_Tech_YT>MoTech</a> & <a href=https://t.me/venombotupdates>MhdRzn</a>"  
-    Source="<a href=https://github.com/MrMKN/Simple-Rename-Bot>Click Here</a>"
-    txt=f"<b>Bot Name: {me.mention}\nDeveloper: <a href=https://github.com/MrMKN>MrMKN</a>\nBot Updates: <a href=https://t.me/mkn_bots_updates>Mᴋɴ Bᴏᴛᴢ™</a>\nMy Master's: {Master}\nSource Code: {Source}</b>"                 
+    Master=f"<a href=https://t.me/Telugu_Bomma_VR_official</a>"  
+    Source="<a href=https://github.com/Nani0778/Simple-Rename-Bot>Click Here</a>"
+    txt=f"<b>Bot Name: {me.mention}\nDeveloper: <a href=https://github.com/Nani0778>Nani</a>\nBot Updates: <a href=https://t.me/Telugu_Bomma_VR_official>TELUGU_BOMMA_VR_OFFICIAL</a>\nMy Master's: {Master}\nSource Code: {Source}</b>"                 
     button= [[        
         InlineKeyboardButton("🚫 Close", callback_data="del"),
         InlineKeyboardButton("⬅️ Back", callback_data="start") 
